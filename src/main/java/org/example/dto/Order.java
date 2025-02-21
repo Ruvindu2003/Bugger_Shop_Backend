@@ -12,7 +12,7 @@ public class Order {
     private  Integer id;
     private String name;
     private  int qty;
-    private double unitePrice;
+    private double unitPrice;
     private Double total;
 
 

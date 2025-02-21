@@ -20,6 +20,7 @@ public class Orderentity {
     private Integer id;
     private String name;
     private int qty;
+    @Column(name = "unit_price")
     private double unitPrice;
     private Double total;
     
