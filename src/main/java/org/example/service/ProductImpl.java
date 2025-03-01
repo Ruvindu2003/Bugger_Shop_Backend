@@ -45,5 +45,15 @@ public class ProductImpl implements ProductService{
         return List.of();
     }
 
+    @Override
+    public List<Product> searchByCategory(String category) {
+        List<Productentity> bycategory=productRepository.findByCategory(category);
+        List<Product> productList=new ArrayList<>();
+        bycategory.forEach(productentity -> {
+            productList.add(modelMapper.map(productentity,Product.class));
+        });
+        return productList;
+    }
+
 
 }

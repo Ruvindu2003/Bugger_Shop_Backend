@@ -36,9 +36,15 @@ public class ProductController {
     }
 
     @GetMapping("/getAll")
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
 
         return productServices.getAll();
     }
+        @GetMapping("/product-search-by-category/{category}")
+
+    public List<Product>searchByCategory(@PathVariable String category){
+        return productServices.searchByCategory(category);
+        }
+
 
 }
