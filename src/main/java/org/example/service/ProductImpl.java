@@ -42,7 +42,7 @@ public class ProductImpl implements ProductService{
         all.forEach(Productentity->{
             productList.add(modelMapper.map(Productentity,Product.class));
         });
-        return List.of();
+        return productList;
     }
 
     @Override
@@ -53,6 +53,12 @@ public class ProductImpl implements ProductService{
             productList.add(modelMapper.map(productentity,Product.class));
         });
         return productList;
+    }
+
+    @Override
+    public Product SearchByID(String id) {
+
+        return  modelMapper.map(productRepository.findById(id),Product.class);
     }
 
 

@@ -40,8 +40,14 @@ public class ProductController {
 
         return productServices.getAll();
     }
-        @GetMapping("/product-search-by-category/{category}")
+    @GetMapping("Search-by-id{id}")
+      public Product searchProduct(@PathVariable String id){
+          Product product=productServices.SearchByID(id);
+          return product;
+        }
 
+
+    @GetMapping("/product-search-by-category/{category}")
     public List<Product>searchByCategory(@PathVariable String category){
         return productServices.searchByCategory(category);
         }

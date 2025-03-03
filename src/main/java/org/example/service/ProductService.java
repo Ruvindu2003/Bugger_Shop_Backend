@@ -13,4 +13,6 @@ public interface ProductService {
     List<Product> getAll();
 
     List<Product> searchByCategory(String category);
+
+    Product SearchByID(String id);
 }
