@@ -1,9 +1,7 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.dto.Order;
 import org.example.dto.Product;
-import org.example.service.OrderService;
 import org.example.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +17,7 @@ public class ProductController {
 
     @PostMapping("/product-add")
     public void addProduct(@RequestBody Product product){
+
         productServices.addProduct(product);
     }
 
